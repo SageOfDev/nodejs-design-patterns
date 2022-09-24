@@ -1,3 +1,8 @@
+/**
+ * usage1: cat sample-source | node 1-non-2-flowing-mode.js
+ * usage2: just run this file
+ */
+
 process.stdin
   .on('readable', () => {
     let chunk

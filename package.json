@@ -2,5 +2,6 @@
   "name": "nodejs-design-patterns",
   "version": "1.0.0",
   "dependencies": {
+    "chance": "^1.1.8"
   }
 }
