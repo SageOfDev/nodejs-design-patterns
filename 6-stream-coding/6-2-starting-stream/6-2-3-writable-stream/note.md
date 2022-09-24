@@ -17,3 +17,27 @@
     ```javascript
     writable.end([chunk], [encoding], [callback])
     ```
+#### 배압(Backpressure)
+- `Backpressure`
+
+  버퍼의 크기 제한을 넘어서는 경우, 'drain' 이벤트가 발생할 때까지 쓰기를 중단하는 메커니즘.
+  - 'drain' 이벤트: 버퍼가 비워지면 다시 쓰기를 시작해도 안전함을 알리는 이벤트  
+- `highWaterMark`
+
+  `writable.write()` 함수가 false를 반환하기 시작하는 내부 버퍼 크기의 제한
+    
+- 배압이 필요한 이유
+
+  읽기보다 쓰기가 더 빨라서 병목현상을 겪을 수 있음.
+
+  이 경우 버퍼링이 해결책.(내 생각: 버퍼링이란 것이 스트리밍보다 읽기 연산 1회당 매칭되는 쓰기 연산 횟수를 늘리는 것이므로.)
+
+  그러나 버퍼링은 메모리 과다사용 위험 존재.
+
+  그래서 `writable.write()`는 내부 버퍼가 `highWaterMark` 제한을 초과하면 `false` 반환
+  
+- 배압은 권고 메커니즘이다. 자동으로 쓰기가 차단되진 않는다.
+
+#### Writable 스트림 구현
+1. Writable 클래스를 상속한다.
+2. `_write()`함수를 구현한다.
