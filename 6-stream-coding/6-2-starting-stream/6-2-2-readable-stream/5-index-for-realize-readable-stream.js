@@ -1,4 +1,4 @@
-const RandomStream = require('./3-realize-readable-stream')
+const RandomStream = require('./4-realize-readable-stream')
 
 const randomStream = new RandomStream()
 randomStream

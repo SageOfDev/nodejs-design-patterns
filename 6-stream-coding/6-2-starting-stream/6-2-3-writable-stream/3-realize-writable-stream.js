@@ -1,7 +1,7 @@
 const {Writable} = require('stream')
 const fs = require('fs/promises')
 const {dirname} = require('path')
-const mkdirp = require('mkdirp-promise')
+const mkdirp = require('mkdirp')
 
 
 class ToFileStream extends Writable {
