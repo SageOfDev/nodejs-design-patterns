@@ -1,0 +1,11 @@
+### Duplex 스트림
+- 읽기 및 쓰기가 가능한 스트림
+- 네트워크 소켓과 같이 데이터 소스이자 데이터 목적지인 엔티티를 설명하려는 경우 유용
+- stream.Readable, stream.Writable 두 스트림의 함수를 상속
+  - read() 및 write() 연산,  readable 및 drain 이벤트 모두를 수신할 수 있음.
+- 사용자 정의 Duplex 스트림 생성하려면 _read() 및 _write() 함수 모두 구현해야 함.
+- Duplex() 생성자에 전달되는 options 객체
+  - Readable 과 Writable 생성자에 모두 전달됨
+  - 추가적으로 `allowHalfOpen` 새로운 옵션이 추가.
+    - false 로 설정하면 Readable 쪽이 끝날 때 Writable 쪽을 자동으로 종료, 반대의 경우도 마찬가지.
+    - default = true
