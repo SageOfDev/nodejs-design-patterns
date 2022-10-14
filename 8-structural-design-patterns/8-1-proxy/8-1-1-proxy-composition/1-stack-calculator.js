@@ -35,3 +35,5 @@ class StackCalculator {
     return result
   }
 }
+
+module.exports = StackCalculator
