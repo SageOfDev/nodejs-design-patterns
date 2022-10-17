@@ -11,6 +11,8 @@ function patchToSafeCalculator(calculator) {
     // Subject에 대한 유효한 위임자(delegate)일 경우
     return divideOrig.apply(calculator)
   }
+
+  return calculator
 }
 
 const calculator = new StackCalculator()
@@ -29,4 +31,4 @@ console.log(calculator.divide())
 safeCalculator.clear()
 safeCalculator.putValue(4)
 safeCalculator.putValue(0)
-console.log(safeCalculator.divide())
+// console.log(safeCalculator.divide())

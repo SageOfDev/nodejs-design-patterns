@@ -1,4 +1,4 @@
-const StackCalculator = require('../../8-1-proxy/8-1-1-proxy-composition/1-stack-calculator')
+const StackCalculator = require('../../8-1-proxy/8-1-1-techniques-for-implementing-proxies/1-stack-calculator')
 
 class EnhancedCalculator {
   constructor(calculator) {
