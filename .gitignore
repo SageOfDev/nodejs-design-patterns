@@ -1,4 +1,5 @@
 .idea
 package-lock.json
+node_modules
 node_modules!/8-structural-design-patterns/8-2-decorator/8-2-2-decorating-a-levelup-database/package-lock.json
 node_modules!/8-structural-design-patterns/8-2-decorator/8-2-2-decorating-a-levelup-database/node_modules
